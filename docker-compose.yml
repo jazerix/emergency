@@ -14,7 +14,7 @@ services:
         - mongo
     environment:
       - PORT=3000
-      - NODE_ENV=local
+      - NODE_ENV=development
       - MONGO_DB_CONNECTION_STRING=mongodb://root:secret@mongo:27017
       - MONGO_DB_NAME=emergency
       - REDIS_URI=redis://redis:6379
