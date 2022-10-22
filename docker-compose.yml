@@ -1,0 +1,32 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  frontend:
+    build: ./Frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  backend:
+    build: ./Backend
+    ports:
+      - "3000:3000"
+    depends_on:
+        - mongo
+    environment:
+      - PORT=3000
+      - NODE_ENV=local
+      - MONGO_DB_CONNECTION_STRING=mongodb://root:secret@mongo:27017
+      - MONGO_DB_NAME=emergency
+      - REDIS_URI=redis://redis:6379
+  mongo:
+      image: mongo:6.0
+      ports:
+          - 27017:27017
+      environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: secret
+          MONGO_INITDB_DATABASE: emergency
+  redis:
+      image: redis:7.0
+      ports:
+          - 6380:6379
