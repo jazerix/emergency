@@ -19,3 +19,4 @@ spec:
         image: europe-docker.pkg.dev/cloud-computing-project-372323/eu.gcr.io/frontend:latest
         ports:
         - containerPort: 80
+      imagePullPolicy: Always

@@ -1,4 +1,4 @@
-FROM node:current-alpine as develop-stage
+FROM --platform=linux/amd64 node:current-alpine as develop-stage
 
 # make the 'app' folder the current working directory
 WORKDIR /app
@@ -12,7 +12,7 @@ RUN npm install
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
 
-FROM develop-stage as build-stage
+FROM --platform=linux/amd64 develop-stage as build-stage
 
 # build app for production with minification
 RUN npm run build
