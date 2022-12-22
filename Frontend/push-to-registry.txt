@@ -1,0 +1,2 @@
+docker build . -t europe-docker.pkg.dev/cloud-computing-project-372323/eu.gcr.io/frontend:latest
+docker push europe-docker.pkg.dev/cloud-computing-project-372323/eu.gcr.io/frontend:latest
