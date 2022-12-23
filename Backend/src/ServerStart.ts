@@ -58,3 +58,6 @@ app.use('/surveys', surveyRoutes);
 app.use('/adaptions', adaptionRoutes);
 app.use('/health', healthRouter)
 app.use('/files/',generateFileRoutes)
+app.get('/', (req, res) => {
+    return res.send("Backend OK :)")
+})
