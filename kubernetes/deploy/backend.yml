@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: europe-docker.pkg.dev/cloud-computing-project-372323/eu.gcr.io/backend:latest
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
