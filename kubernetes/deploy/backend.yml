@@ -21,9 +21,9 @@ spec:
         - containerPort: 3000
         imagePullPolicy: Always
         env:
-        - name:  MONGO_DB_CONNECTION_STRING
+        - name: MONGO_DB_CONNECTION_STRING
           value: mongodb+srv://cloudcomputing:change-on-server@cloudcomputing.q4vi5gf.mongodb.net
         - name: MONGO_DB_NAME
           value: test
         - name: REDIS_URI
-          value: redis://redis:6379
+          value: redis://localhost:6379
